@@ -1,126 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>AlgoGame</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+<head>
+	<title>AlgoGame</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+	<link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+	<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+	<script src="js/main.js"></script>
+
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <div class="navbar-brand" href="#" id="expand">...</div>
-            <a class="navbar-brand" >EasyCode</a>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-    </nav>
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand" href="#" id="expand">...</div>
+				<a class="navbar-brand">EasyCode</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="login.html">
+						<span class="glyphicon glyphicon-user"></span> Sign Up</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="glyphicon glyphicon-log-in"></span> Login</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-    <!-- Content -->
-    <div class="content">
+	<!-- Content -->
+	<div class="content">
 
-        <!-- Left bar -->
-        <div class="left-bar">
-        <ul class="list-group">
-                <a href="http://programming.in.ua" class="list-group-item">Binary exponentiation</a>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-			
-              </ul>
+		<!-- Left bar -->
+		<div class="left-bar">
+			<ul class="list-group">
+				<a href="http://programming.in.ua" class="list-group-item">Binary exponentiation</a>
+				<li class="list-group-item">Dapibus ac facilisis in</li>
+				<li class="list-group-item">Morbi leo risus</li>
+				<li class="list-group-item">Porta ac consectetur ac</li>
+				<li class="list-group-item">Vestibulum at eros</li>
 
-        </div>
+			</ul>
 
-        <!-- Info -->
-        <div class="info">
-            <h1>Binary exponentiation</h1>
-  <p>The complexity of this algorithm is O(logn)</p> 
-  <p>Raising a to the power of n is expressed naively as multiplication by a done n−1 times: a^n=a⋅a⋅…⋅a. However, this approach is not practical for large a or n.
+		</div>
 
-Recall that a^(b+c)=a^b⋅a^c and a^2b=a^b⋅a^b=(a^b)^2.
-
-Let's write n in binary system, for example:
-
-3^11=3^8⋅3^2⋅3^1
-So we only need to find the sequence of numbers in which each one is a square of the previous one:
-
-3^1=3
-3^2=(3^1)^2=3⋅3=9
-3^4=(3^2)^2=9⋅9=81
-3^8=(3^4)^2=81⋅81=6561
-The get the final answer, we multiply three of them (skipping 34 because corresponding bit in n is zero): 3^11=6561⋅9⋅3=177147.
-A recursive approach expresses the same idea as a recursion:
-a^n=(a^(n/2))^2 for even n, a^n=(a^((n−1)/2))^2⋅a for odd n, a^1=a.</p>   
-	<p>
-	int binpow (int a, int n) {
-		</p>
-	<p>
-	if (n == 0)
-		</p>
-		<p>
-		return 1;
+		<!-- Info -->
+		<div class="info">
+			<h1>Binary exponentiation</h1>
+			<p>The complexity of this algorithm is O(logn)</p>
+			<p>Raising a to the power of n is expressed naively as multiplication by a done n−1 times: a^n=a⋅a⋅…⋅a. However, this approach
+				is not practical for large a or n. Recall that a^(b+c)=a^b⋅a^c and a^2b=a^b⋅a^b=(a^b)^2. Let's write n in binary system,
+				for example: 3^11=3^8⋅3^2⋅3^1 So we only need to find the sequence of numbers in which each one is a square of the previous
+				one: 3^1=3 3^2=(3^1)^2=3⋅3=9 3^4=(3^2)^2=9⋅9=81 3^8=(3^4)^2=81⋅81=6561 The get the final answer, we multiply three of
+				them (skipping 34 because corresponding bit in n is zero): 3^11=6561⋅9⋅3=177147. A recursive approach expresses the same
+				idea as a recursion: a^n=(a^(n/2))^2 for even n, a^n=(a^((n−1)/2))^2⋅a for odd n, a^1=a.</p>
+			<p>
+				int binpow (int a, int n) {
 			</p>
-	<p>
-	if (n % ?==1)
+			<p>
+				if (n == 0)
 			</p>
-<form id="frm1" class="input-group mb-3">
+			<p>
+				return 1;
+			</p>
+			<p>
+				if (n % ?==1)
+			</p>
+			<form id="frm1" class="input-group mb-3">
 
-  <input  type="text" class="form-control" aria-describedby="basic-addon1">
-</form> 
-		<p>
-		return binpow (a, n-?) * a;
-	</p>
-<form id="frm2" class="input-group mb-3">
+				<input type="text" class="form-control" aria-describedby="basic-addon1">
+			</form>
+			<p>
+				return binpow (a, n-?) * a;
+			</p>
+			<form id="frm2" class="input-group mb-3">
 
-  <input  type="text" class="form-control" aria-describedby="basic-addon1">
-</form> 
-	<p>
-	else {
-	</p>
-	<p>
-		int b = binpow (a, n/?);
-</p>
-<form id="frm3" class="input-group mb-3">
+				<input type="text" class="form-control" aria-describedby="basic-addon1">
+			</form>
+			<p>
+				else {
+			</p>
+			<p>
+				int b = binpow (a, n/?);
+			</p>
+			<form id="frm3" class="input-group mb-3">
 
-  <input  type="text" class="form-control" aria-describedby="basic-addon1">
-</form> 
-<p>
-		return b * b;
-</p>
-<p>
-	}
-</p>
-<p>
-}
+				<input type="text" class="form-control" aria-describedby="basic-addon1">
+			</form>
+			<p>
+				return b * b;
+			</p>
+			<p>
+				}
+			</p>
+			<p>
+				}
 
-</p>	
-<!--Test-->
-
-			
-<button onclick="Answer()">Submit</button>
-
-			
-			
-        </div>
-    </div>
+			</p>
+			<!--Test-->
 
 
-	
-	</body>
+			<button onclick="Answer()">Submit</button>
+
+
+
+		</div>
+	</div>
+
+
+
+</body>
+
 </html>
