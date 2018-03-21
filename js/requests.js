@@ -17,11 +17,11 @@ function getAll() {
 }
 
 function post(email, login, psw) {
-	let psw = CryptoJS.SHA512(psw);
+	let crypted = CryptoJS.SHA512(psw);
 	let jsondata = {
 		email: email,
 		login: login,
-		password: psw,
+		password: crypted,
 		item_one: false,
 		item_two: false,
 		item_three: false
