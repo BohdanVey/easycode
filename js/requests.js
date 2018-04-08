@@ -12,13 +12,20 @@ function getAll() {
 	}
 
 	$.ajax(settings).done(function (response) {
-		console.log(response);
+		console.log(response.email);
 	});
 }
 
+function GetByEmail(){
+var query = getAll;
+var hints = {"$max": 10, "$orderby": {"_id": -1}};
+db.easycode.find(query, hints, function(err, res){
+  if (!err){
+  }
+});
+}
 function post(email, login, psw) {
 	
-
 
 
 var result = (MD5(psw));
