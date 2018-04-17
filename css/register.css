@@ -1,0 +1,104 @@
+body{
+    background: url(../img/back2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.content{
+    width: 100%;
+    height: calc(100vh - 52px);
+    display: flex;
+    flex-direction: row;
+}
+
+.info{
+    width: 100%;
+}
+
+.navigation{
+    border-radius: 0;
+    margin: 0;
+}
+
+
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+    height:35px !important;
+}
+
+span.input-group-addon{
+    height:35px !important;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+
+
+/* Button style */
+.my-btn-login{
+	font-size: 11px;
+	text-align: center;
+}
+
+.dark-btn{
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #000;
+    opacity: .7;
+}
+.dark-btn:hover{
+    opacity: .5;
+    background-color: rgb(78, 75, 75);
+}
+button:focus {outline:0;}
+
+.register-btn{
+    width: 100%;
+    border-radius: 4px;
+}
