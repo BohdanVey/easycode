@@ -44,7 +44,7 @@ function registerUser() {
 	localStorage.setItem('login_ec', login);
 	localStorage.setItem('password_ec', MD5(password));
 	post(email, login, password);
-	window.location.href = 'index.html';
+	window.location.href = 'algo1.html';
 };
 
 // https://developer.mozilla.org/uk/docs/Web/API/Window/localStorage
