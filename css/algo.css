@@ -1,9 +1,14 @@
+/* General */
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+}
+
 /* Main blocks */
 body{
     font-family: 'Roboto', sans-serif;
     height: 100%;
     z-index: 1;
-    background: url(../img/back2.jpg) no-repeat center center fixed; 
+    background: url(../img/background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,7 +17,8 @@ body{
 
 .content{
     width: 100%;
-    height: calc(100vh - 52px);
+    height: 100%;
+    min-height: calc(100vh - 52px);
     display: flex;
     flex-direction: row;
 }
@@ -26,7 +32,7 @@ body{
 .left-bar{
     min-width: 300px;
     width: 20%;	
-    height: 100%;
+
     background-color: rgba(245,245,245, 0.8);
     border-right-width: 1px;
     border-right-color: #dddddd;
@@ -43,12 +49,28 @@ body{
     color: #424242;
     border-right: none;
     border-radius: 0px !important;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding-top: 10px;
+}
+.download{
+    font-size: 20px;
+    cursor: pointer;
+    color: #777777 !important;
+}
+.done{
+    background-color: #DCEDC8 !important;
+}
+.color{
+    color: #777777 !important;
 }
 
 /* Navigation */
 .navigation{
     border-radius: 0;
     margin: 0;
+    min-width: 710px;
 }
 
 
@@ -56,20 +78,47 @@ body{
 
 
 /* Text style */
+.section-name{
+    font-size: 28px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
 .names{
+    font-size: 38px;
     text-align: center;
 }
+.remove-a-style{
+    color: black;
+}
+.remove-a-style:hover{
+    color: black;
+    text-decoration: none;
+}
 .complexity{
+    font-style: italic;
     text-align: center;
     font-size: 20px;
+}
+.complexity-number{
+    font-style: normal;
+    font-weight: bold;
+    cursor: pointer;
+}
+.complexity-number:hover{
+    text-decoration: underline;
 }
 .description{
     padding: 10px;
     margin: 25px 0;
-    font-size:16px;
-    line-height: 30px;
+    font-size:18px;
+    line-height: 34px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 4px;
+    cursor: pointer;
+}
+.description:hover{
+    background-color: rgba(255, 255, 255, 0.45);
 }
 
 h1.title { 
@@ -100,10 +149,18 @@ input.code-style:focus {
     box-shadow: 0 0 10px #ede7f6;
 }
 
+pre{
+    cursor: pointer;
+}
+pre:hover{
+    background-color: rgba(245,245,245, 0.9);
+}
+
 
 /* Button style */
 .check-btn{
     width: 150px;
+    margin-bottom: 20px;
 }
 .dark-btn{
     border: none;
@@ -112,14 +169,13 @@ input.code-style:focus {
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
-    color: inherit;
-    background-color: inherit;
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
     color: #fff;
     background-color: #000;
     opacity: .7;
+    font-size: 16px;
 }
 .dark-btn:hover{
     opacity: .5;
@@ -127,3 +183,21 @@ input.code-style:focus {
 }
 button:focus {outline:0;}
 
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

@@ -1,3 +1,4 @@
+// Todo: Comment it
 function getAll() {
 	var settings = {
 		"async": true,
@@ -31,17 +32,17 @@ function getByEmail(email){
 	}
 
 	$.ajax(settings).done(function (response) {
-		console.log(response);
 		result = response;
 	});
 	return result;
 }
 
-function checkUser(login, password){
+function checkUser(login, md5_password){
+	let result = [];
 	let settings = {
 		"async": false,
 		"crossDomain": true,
-		"url": 'https://easycode-bee9.restdb.io/rest/easycode?q={"login": "' + login + '", "password": "' + MD5(password) +'"}',
+		"url": 'https://easycode-bee9.restdb.io/rest/easycode?q={"login": "' + login + '", "password": "' + md5_password +'"}',
 		"method": "GET",
 		"headers": {
 			"content-type": "application/json",
@@ -51,16 +52,17 @@ function checkUser(login, password){
 	}
 
 	$.ajax(settings).done(function (response) {
-		console.log(response);
+		result = response;
 	});
+	return result;
 }	
 
 
 
 function post(email, login, psw) {
+	let status = false;
 	var result = (MD5(psw));
 		psw=result;
-		console.log(result);
 		let jsondata = {
 			email: email,
 			login: login,
@@ -70,7 +72,7 @@ function post(email, login, psw) {
 			item_three: false
 		};
 		let settings = {
-			"async": true,
+			"async": false,
 			"crossDomain": true,
 			"url": "https://easycode-bee9.restdb.io/rest/easycode",
 			"method": "POST",
@@ -84,6 +86,31 @@ function post(email, login, psw) {
 		}
 
 		$.ajax(settings).done(function (response) {
-			console.log(response);
+			status = response;
 		});
+	return status;
+}
+
+
+function put(field, id){
+	status = false;
+	var jsondata = {field: "true"};
+	var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://easycode-bee9.restdb.io/rest/easycode/" + id,
+	"method": "PUT",
+	"headers": {
+		"content-type": "application/json",
+		"x-apikey": "5ab2ab4df0a7555103cea668",
+		"cache-control": "no-cache"
+	},
+	"processData": false,
+	"data": JSON.stringify(jsondata)
+	}
+
+	$.ajax(settings).done(function (response) {
+		status = response;
+	});
+	return status;
 }

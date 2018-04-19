@@ -5,28 +5,25 @@
 	<title>EasyCode</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/ico.png">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/algo.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 </head>
 
 <body>
+
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<div class="navbar-brand" href="#" id="expand"><span class="glyphicon glyphicon-menu-hamburger"></span> </div>
-				<a class="navbar-brand">EasyCode</a>
+				<a class="navbar-brand" href="index.html">EasyCode</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="register.html">
-						<span class="glyphicon glyphicon-user"></span> Sign Up</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="glyphicon glyphicon-log-in"></span> Login</a>
+				<li id="logout">
+						<a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
 				</li>
 			</ul>
 		</div>
@@ -38,20 +35,37 @@
 		<!-- Left bar -->
 		<div class="left-bar">
 			<ul class="list-group">
-				<a href="http://programming.in.ua" class="list-group-item">Binary exponentiation</a>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Morbi leo risus</li>
-				<li class="list-group-item">Porta ac consectetur ac</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-
+				<div class="list-group-item" id="algo1">
+					<a href="#" class="remove-a-style color">Binary exponentiation</a> 
+					<a href="codes/algo1.cpp" download="binary_exponential.cpp" class="download remove-a-style"  id="algo1_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item" id="algo2">
+					<a href="#" class="remove-a-style color">Dijkstra algorithm</a> 
+					<a href="codes/algo2.cpp" download="dijkstra.cpp" class="download remove-a-style" id="algo2_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo3">
+					<a href="#" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo3.cpp" download="lcd.cpp" class="download remove-a-style" id="algo3_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
 			</ul>
 
 		</div>
 
-		<!-- Info -->
+		<!-- Name -->
 		<div class="info">
-			<h2 class="names">Binary exponentiation</h2>
-			<p class="complexity"><var>The complexity of this algorithm is O(logn)</var></p>
+			<h2 class="names">
+				<a href="https://en.wikipedia.org/wiki/Exponentiation_by_squaring" class="remove-a-style">Binary exponentiation</a>
+			</h2>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(logn)</span></p>
+
+			<!-- Info -->
+			<p class="section-name">Algorithm info</p>
 			<div class="description">Raising a to the power of n is expressed naively as multiplication by a done n−1 times: a<sup>n</sup>=a⋅a⋅…⋅a.
 				However, this approach is not practical for large a or n. Recall that a<sup>b+c</sup>=a<sup>b</sup>⋅a<sup>c</sup> and 
 				a<sup>2b</sup>=a<sup>b</sup>⋅a<sup>b</sup>. Let's write n in binary system,
@@ -61,23 +75,42 @@
 				3<sup>8</sup>=(3<sup>4</sup>)<sup>2</sup>=81⋅81=6561 The get the final answer, we multiply three of
 				idea as a recursion: a<sup>n</sup>=(a<sup>n/2</sup>)<sup>2</sup> for even n, a<sup>n</sup>=(a<sup>(n-1)/2</sup>)<sup>2</sup>⋅a for odd n, a<sup>1</sup>=a.
 			</div>
-<pre><code>int binpow (int a, int n) {
+
+
+			<!-- Code -->
+			<p class="section-name">Algorithm realisation</p>
+<pre><code>int binpow(int a, int n) {
 	if (n == 0)
 		return 1;
-	
-	if (n % <input type="text" id="frm1" class="code-style"/> == 1)
-		return binpow (a, n - <input type="text" id="frm2" class="code-style"/>) * a;
+
+	if (n % <input type="text" id="q1" class="code-style"/> == 1)
+		return binpow (a, n - <input type="text" id="q2" class="code-style"/>) * a;
 	else {
-	int b = binpow (a, n / <input type="text" id="frm3" class="code-style"/>);
+	int b = binpow (a, n / <input type="text" id="q3" class="code-style"/>);
 	return b * b;	
 	}
 }
 </code></pre>
-			<!--Test-->
+
+<!-- In work -->
+<p class="section-name">Algorithm in work</p>
+<pre><code>printf("result is %d\n", binpow(3, 4));
+//Output: result is <input type="text" id="q4" class="code-style"/>
+printf("result is %d\n", binpow(2, 8));
+//Output: result is <input type="text" id="q5" class="code-style"/>
+	</code></pre>
 
 
-			<button onclick="answer()" type="button" class="check-btn dark-btn">Check</button>
+		<!-- Check -->
+		<button onclick="checkAnswers()" type="button" class="check-btn dark-btn">Check</button>
+		
+		<div class="alert alert-danger" role="alert" id="wrong-alert">
+				Wrong answers. Try again!
+		</div>
 
+		<div class="alert alert-success" role="alert" id="correct-alert">
+				Correct answers. Now algorithm avaliable for you!
+		</div>
 
 
 		</div>
@@ -85,7 +118,10 @@
 
 	<script src="https://easycode-bee9.restdb.io/rest/_jsapi.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/MD5.js"></script>
+	<script src="js/requests.js"></script>
+	<script src="js/algo_default.js"></script>
+	<script src="js/algo1.js"></script>
 </body>
 
 </html>

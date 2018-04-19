@@ -1,0 +1,5 @@
+Add new algo:
+requests.js/post
+left bar to all algo htmls
+add algo[n].js and html
+add codes/algo[n].cpp
