@@ -24,6 +24,7 @@ body{
 }
 
 .info{
+	width: 100%;
     padding-left: 75px;
     padding-right: 75px;
 }
