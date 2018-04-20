@@ -26,5 +26,5 @@ function checkAnswers() {
     put(item, user._id);
     user[item] = true;
     $("#algo2").addClass("done");
-    $("#algo1_load").show();
+    $("#algo2_load").show();
 }
