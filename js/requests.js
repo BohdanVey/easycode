@@ -13,7 +13,7 @@ function getAll() {
 	}
 
 	$.ajax(settings).done(function (response) {
-		console.log(response);
+		// console.log(response);
 	});
 }
 
@@ -60,7 +60,7 @@ function checkUser(login, md5_password){
 
 
 function post(email, login, psw) {
-	let status = false;
+	let status = null;
 	var result = (MD5(psw));
 		psw=result;
 		let jsondata = {
@@ -93,8 +93,9 @@ function post(email, login, psw) {
 
 
 function put(field, id){
-	status = false;
-	var jsondata = {field: "true"};
+	let status = null;
+	var jsondata = {};
+	jsondata[field] = true;
 	var settings = {
 	"async": true,
 	"crossDomain": true,

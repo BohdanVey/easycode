@@ -15,7 +15,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/login.css">
 
 
 
@@ -31,10 +31,10 @@
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li id="register">
-					<a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+					<a href="register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
 				</li>
 				<li id="login">
-					<a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+					<a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
 				</li>
 				<li id="algo">
 					<a href="algo1.html"><span class="glyphicon glyphicon-console"></span> Algorithms</a>
@@ -71,18 +71,6 @@
 						</div>
 
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">E-mail</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="fa fa-users fa" aria-hidden="true"></i>
-									</span>
-									<input type="text" class="form-control" name="email" id="email" placeholder="Enter your E-mail" />
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
 							<label for="confirm" class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -95,16 +83,16 @@
 						</div>
 
 						<div class="form-group ">
-							<button onclick="registerUser()" type="button" class="dark-btn register-btn">Register</button>
+							<button onclick="loginUser()" type="button" class="dark-btn login-btn">Login</button>
 						</div>
-						<div class="my-btn-login">
-							<a href="login.html">Login</a>
+						<div class="my-btn-register">
+							<a href="register.html">Register</a>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="alert alert-danger my-alert" role="alert" id="wrong-alert">Email already exists!</div>
+		<div class="alert alert-danger my-alert" role="alert" id="wrong-alert">Wrong username or password!</div>
 		<div class="alert alert-warning my-alert" role="alert" id="wait-alert">Processing...</div>
 	</div>
 
@@ -113,7 +101,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 	<script src="js/MD5.js"></script>
 	<script src="js/requests.js"></script>
-	<script src="js/register.js"></script>
+	<script src="js/login.js"></script>
 </body>
 
 </html>

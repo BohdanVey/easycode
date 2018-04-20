@@ -39,13 +39,13 @@
 		<div class="left-bar">
 			<ul class="list-group">
 				<div class="list-group-item" id="algo1">
-					<a href="#" class="remove-a-style color">Binary exponentiation</a> 
+					<a href="algo1.html" class="remove-a-style color">Binary exponentiation</a> 
 					<a href="codes/algo1.cpp" download="binary_exponential.cpp" class="download remove-a-style"  id="algo1_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
 				</div>
 				<div class="list-group-item" id="algo2">
-					<a href="algo2.html" class="remove-a-style color">Dijkstra algorithm</a> 
+					<a href="#" class="remove-a-style color">Dijkstra algorithm</a> 
 					<a href="codes/algo2.cpp" download="dijkstra.cpp" class="download remove-a-style" id="algo2_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
@@ -69,39 +69,66 @@
 
 			<!-- Info -->
 			<p class="section-name">Algorithm info</p>
-			<div class="description">Raising a to the power of n is expressed naively as multiplication by a done n−1 times: a<sup>n</sup>=a⋅a⋅…⋅a.
-				However, this approach is not practical for large a or n. Recall that a<sup>b+c</sup>=a<sup>b</sup>⋅a<sup>c</sup> and 
-				a<sup>2b</sup>=a<sup>b</sup>⋅a<sup>b</sup>. Let's write n in binary system,
-				for example: 3<sup>11</sup>=3<sup>8</sup>⋅3<sup>2</sup>⋅3<sup>1</sup> So we only need to find the sequence of numbers in which each one is a square of the previous
-				them (skipping 34 because corresponding bit in n is zero): 3<sup>11</sup>=6561⋅9⋅3=177147. A recursive approach expresses the same
-				one: 3<sup>1</sup>=3   3<sup>2</sup>=3<sup>1<sup>2</sup></sup>=3⋅3=9 3<sup>4</sup>=(3<sup>2<sup>2</sup></sup>=9⋅9=81 
-				3<sup>8</sup>=(3<sup>4</sup>)<sup>2</sup>=81⋅81=6561 The get the final answer, we multiply three of
-				idea as a recursion: a<sup>n</sup>=(a<sup>n/2</sup>)<sup>2</sup> for even n, a<sup>n</sup>=(a<sup>(n-1)/2</sup>)<sup>2</sup>⋅a for odd n, a<sup>1</sup>=a.
+			<div class="description">Here is an algorithm described by the Dutch computer scientist Edsger W. Dijkstra in 1959.
+
+Let's create an array d[] where for each vertex v we store the current length of the shortest path from s to v in d[v]. Initially d[s]=0, and for all other vertices this length equals infinity. In the implementation a sufficiently large number (which is guaranteed to be greater than any possible path length) is chosen as infinity.
+
+				<p>d[v]=∞, v≠s</p>
+In addition, we maintain a Boolean array u[] which stores for each vertex v whether it's marked. Initially all vertices are unmarked:
+
+				<p>u[v]=false</p>
+The Dijkstra's algorithm runs for n iterations. At each iteration a vertex v is chosen as unmarked vertex which has the least value d[v]:
+
+				<p>Evidently, in the first iteration the starting vertex s will be selected.</p>
+
+The selected vertex v is marked. Next, from vertex v relaxations are performed: all edges of the form (v,to) are considered, and for each vertex to the algorithm tries to improve the value d[to]. If the length of the current edge equals len, the code for relaxation is:
+
+				<p>d[to]=min(d[to],d[v]+len)</p>
+After all such edges are considered, the current iteration ends. Finally, after n iterations, all vertices will be marked, and the algorithm terminates. We claim that the found values d[v] are the lengths of shortest paths from s to all vertices v.
+
+				<p>Note that if some vertices are unreachable from the starting vertex s, the values d[v] for them will remain infinite. Obviously, the last few iterations of the algorithm will choose those vertices, but no useful work will be done for them. Therefore, the algorithm can be stopped as soon as the selected vertex has infinite distance to it.</p>
 			</div>
 
 
 			<!-- Code -->
 			<p class="section-name">Algorithm realisation</p>
-<pre><code>int binpow(int a, int n) {
-	if (n == 0)
-		return 1;
+<pre><code>
+const int INF = 1000000000;
+vector< vector< pair< int, int > > > adj;
 
-	if (n % <input type="text" id="q1" class="code-style"/> == 1)
-		return binpow (a, n - <input type="text" id="q2" class="code-style"/>) * a;
-	else {
-	int b = binpow (a, n / <input type="text" id="q3" class="code-style"/>);
-	return b * b;	
-	}
+void dijkstra(int s, vector< int > & d, vector< int > & p) {
+    int n = adj.size();
+    d.assign(n, <input type="text" id="q1" class="code-style"/>);
+    p.assign(n,<input type="text" id="q2" class="code-style"/>);
+    vector< bool > u(n, <input type="text" id="q3" class="code-style"/>);
+
+    d[s] = <input type="text" id="q4" class="code-style"/>;
+    for (int i = 0; i < n; i++) {
+        int v = -1;
+        for (int j = 0; j < n; j++) {
+            if (!u[j] && (v == <input type="text" id="q5" class="code-style"/> || <input type="text" id="q6" class="code-style"/> < d[v]))
+                v = j;
+        }
+
+        if (d[v] == INF)
+            break;
+
+        u[v] = true;
+        for (auto edge : adj[v]) {
+            int to = edge.first;
+            int len = edge.second;
+
+            if (d[v] + <input type="text" id="q7" class="code-style"/> < d[to] ) {
+                d[to] = d[v] + len;
+                p[to] = v;
+            }
+        }
+    }
 }
 </code></pre>
 
 <!-- In work -->
-<p class="section-name">Algorithm in work</p>
-<pre><code>printf("result is %d\n", binpow(3, 4));
-//Output: result is <input type="text" id="q4" class="code-style"/>
-printf("result is %d\n", binpow(2, 8));
-//Output: result is <input type="text" id="q5" class="code-style"/>
-	</code></pre>
+
 
 
 		<!-- Check -->
@@ -124,7 +151,7 @@ printf("result is %d\n", binpow(2, 8));
 	<script src="js/MD5.js"></script>
 	<script src="js/requests.js"></script>
 	<script src="js/algo_default.js"></script>
-	<script src="js/algo1.js"></script>
+	<script src="js/algo2.js"></script>
 </body>
 
 </html>

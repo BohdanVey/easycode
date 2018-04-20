@@ -1,11 +1,13 @@
 function checkAnswers() {
-    let answers = ["2", "1", "2", "81", "256"];
+    let answers = ["INF", "-1", "false", "0", "-1","d[j]","len"];
     let forms = [
         document.getElementById("q1"),
         document.getElementById("q2"),
         document.getElementById("q3"),
         document.getElementById("q4"),
-        document.getElementById("q5")];
+        document.getElementById("q5"),
+	document.getElementById("q6"),
+	document.getElementById("q7")];
     for(let i = 0; i < forms.length; i++){
         if(forms[i].value != answers[i]){
             // Wrong

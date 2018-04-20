@@ -1,4 +1,5 @@
 Add new algo:
+algo[n].html
 requests.js/post
 left bar to all algo htmls
 add algo[n].js and html

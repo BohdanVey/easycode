@@ -149,6 +149,16 @@ input.code-style:focus {
     box-shadow: 0 0 10px #ede7f6;
 }
 
+input.code-style2{
+    width: 220px;
+    border-radius: 5px;
+    text-align: center;
+}
+input.code-style2:focus { 
+    outline: none !important;
+    border-color: #ede7f6;
+    box-shadow: 0 0 10px #ede7f6;
+}
 pre{
     cursor: pointer;
 }

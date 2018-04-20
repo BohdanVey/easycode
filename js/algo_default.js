@@ -9,14 +9,14 @@ $(document).ready(function(e) {
 	let password = localStorage.getItem("password_ec");
 	let result = checkUser(login, password);
 	if( login === null || password === null || result.length == 0) {
-		window.location.href = 'register.html';
+		window.location.href = 'login.html';
 	}
 	user = result[0]; // set user
 	//TODO: remove
 	// user = {
 	// 	item_one: true,
-	// 	item_two: false,
-	// 	item_three: false,
+	// 	item_two: true,
+	// 	item_three: true,
 	// }
 
 	// get avaliable algorithms
@@ -42,7 +42,7 @@ $(document).ready(function(e) {
 	$("#logout").click(()=>{
 		localStorage.removeItem("login_ec");
 		localStorage.removeItem("password_ec");
-		window.location.href = 'register.html';
+		window.location.href = 'login.html';
 	});
     
     
