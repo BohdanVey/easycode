@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>EasyCode</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/ico.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/algo.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand" href="#" id="expand"><span class="glyphicon glyphicon-menu-hamburger"></span> </div>
+				<a class="navbar-brand" href="index.html">EasyCode</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="algo">
+					<a href="#"><span class="glyphicon glyphicon-console"></span> Algorithms</a>
+				</li>
+				<li id="logout">
+						<a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Content -->
+	<div class="content">
+
+		<!-- Left bar -->
+		<div class="left-bar">
+			<ul class="list-group">
+				<div class="list-group-item" id="algo1">
+					<a href="algo1.html" class="remove-a-style color">Binary exponentiation</a> 
+					<a href="codes/algo1.cpp" download="binary_exponential.cpp" class="download remove-a-style"  id="algo1_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item" id="algo2">
+					<a href="algo2.html" class="remove-a-style color">Dijkstra algorithm</a> 
+					<a href="codes/algo2.cpp" download="dijkstra.cpp" class="download remove-a-style" id="algo2_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo3">
+					<a href="#" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo3.cpp" download="lcd.cpp" class="download remove-a-style" id="algo3_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+			</ul>
+
+		</div>
+
+		<!-- Name -->
+		<div class="info">
+			<h2 class="names">
+				<a href="https://en.wikipedia.org/wiki/Exponentiation_by_squaring" class="remove-a-style">Greatest common divider</a>
+			</h2>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(log(min(a,b)))</span></p>
+
+			<!-- Info -->
+			<p class="section-name">Algorithm info</p>
+			<div class="description">
+				
+				The algorithm is extremely simple:
+
+				<p>gcd(a,b)=a,if b=0</p>
+					<p>gcd(a,b)=(b,a%b) otherwise</p>
+				
+			</div>
+
+
+			<!-- Code -->
+			<p class="section-name">Algorithm realisation</p>
+<pre><code>
+int gcd (int a, int b) {
+    if (b == 0)
+        return a;
+    else
+        return gcd (b, a % b);
+}
+</code></pre>
+
+<!-- In work -->
+<p class="section-name">Algorithm in work</p>
+<pre><code>printf("result is %d\n", gcd(1024, 9));
+//Output: result is <input type="text" id="q4" class="code-style"/>
+printf("result is %d\n", binpow(200, 120));
+//Output: result is <input type="text" id="q5" class="code-style"/>
+	</code></pre>
+
+
+
+		<!-- Check -->
+		<button onclick="checkAnswers()" type="button" class="check-btn dark-btn">Check</button>
+		
+		<div class="alert alert-danger" role="alert" id="wrong-alert">
+				Wrong answers. Try again!
+		</div>
+
+		<div class="alert alert-success" role="alert" id="correct-alert">
+				Correct answers. Now algorithm avaliable for you!
+		</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://easycode-bee9.restdb.io/rest/_jsapi.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/MD5.js"></script>
+	<script src="js/requests.js"></script>
+	<script src="js/algo_default.js"></script>
+	<script src="js/algo2.js"></script>
+</body>
+
+</html>
