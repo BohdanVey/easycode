@@ -22,9 +22,9 @@ function checkAnswers() {
     $("#correct-alert").show();
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
-    let item = "item_one";
+    let item = "item_two";
     put(item, user._id);
     user[item] = true;
     $("#algo2").addClass("done");
-    $("#algo2_load").show();
+    $("#algo1_load").show();
 }
