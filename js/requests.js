@@ -69,7 +69,19 @@ function post(email, login, psw) {
 			password: psw,
 			item_one: false,
 			item_two: false,
-			item_three: false
+			item_three: false,
+			item_four: false,
+			item_five: false,
+			item_six: false,
+			item_seven: false,
+			item_eight: false,
+			item_nine: false,
+			item_ten: false,
+			item_eleven: false,
+			item_tvelwe: false,
+			item_thirteen: false,
+			item_fourteen: false,
+			item_fifteen: false
 		};
 		let settings = {
 			"async": false,

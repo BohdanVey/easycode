@@ -36,6 +36,38 @@ $(document).ready(function(e) {
 		$("#algo3").addClass("done");
 	else
 		$("#algo3_load").hide();
+	if(user.item_four)
+		$("#algo4").addClass("done");
+	else
+		$("#algo4_load").hide();
+	if(user.item_five)
+		$("#algo5").addClass("done");
+	else
+		$("#algo_load").hide();
+	if(user.item_six)
+		$("#algo6").addClass("done");
+	else
+		$("#algo6_load").hide();
+	if(user.item_seven)
+		$("#algo7").addClass("done");
+	else
+		$("#algo7_load").hide();
+	if(user.item_eight)
+		$("#algo8").addClass("done");
+	else
+		$("#algo8_load").hide();
+	if(user.item_nine)
+		$("#algo9").addClass("done");
+	else
+		$("#algo9_load").hide();
+	if(user.item_ten)
+		$("#algo10").addClass("done");
+	else
+		$("#algo10_load").hide();
+	if(user.item_eleven)
+		$("#algo11").addClass("done");
+	else
+		$("#algo11_load").hide();
 
 
 	// logot button
