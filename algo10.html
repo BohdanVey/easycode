@@ -22,6 +22,9 @@
 				<a class="navbar-brand" href="index.html">EasyCode</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
+				<li id="shop">
+					<a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Shop</a>
+				</li>
 				<li id="algo">
 					<a href="#"><span class="glyphicon glyphicon-console"></span> Algorithms</a>
 				</li>
@@ -107,7 +110,7 @@
 			<h2 class="names">
 				<a href="https://e-maxx-eng.appspot.com/algebra/factorial-divisors.htmlm" class="remove-a-style">Finding Power of Factorial Divisor</a>
 			</h2>
-			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(k)</span></p>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(log<sub>k</sub>n)</span></p>
 
 			<!-- Info -->
 			<p class="section-name">Algorithm info</p>
@@ -115,7 +118,7 @@
 				<p>Let's first consider the case of prime k. The explicit expression for factorial</p>
 				<p>n!=1⋅2⋅3…(n−1)⋅n</p>
 				<p>Note that every k-th element of the product is divisible by k, i.e. adds +1 to the answer; the number of such elements is ⌊n/k⌋.</p>
-<p>Next, every k2-th element is divisible by k2, i.e. adds another +1 to the answer (the first power of k has already been counted in the previous paragraph). The number of such elements is ⌊n/k<sup>2</sup>⌋.
+<p>Next, every k-th element is divisible by k, i.e. adds another +1 to the answer (the first power of k has already been counted in the previous paragraph). The number of such elements is ⌊n/k<sup>2</sup>⌋.
 
 				<p>And so on, for every i each k<sub>i</sub>-th element adds another +1 to the answer, and there are ⌊n/k<sup>i</sup>⌋ such elements.</p>
 				<p>The final answer is</p>
