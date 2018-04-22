@@ -45,7 +45,7 @@
 					</a>
 				</div>
 				<div class="list-group-item" id="algo2">
-					<a href="#" class="remove-a-style color">Dijkstra algorithm</a> 
+					<a href="algo2.html" class="remove-a-style color">Dijkstra algorithm</a> 
 					<a href="codes/algo2.cpp" download="dijkstra.cpp" class="download remove-a-style" id="algo2_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
@@ -87,7 +87,7 @@
 					</a>
 				</div>
 				<div class="list-group-item"  id="algo9">
-					<a href="algo9.html" class="remove-a-style color">ExtendedEuclideanAlgorithm</a> 
+					<a href="#" class="remove-a-style color">Extended Euclidean Algorithm</a> 
 					<a href="codes/algo9.cpp" download="ExtendedEuclideanAlgorithm.cpp" class="download remove-a-style" id="algo9_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
@@ -98,7 +98,7 @@
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
 				</div>
-
+				
 			</ul>
 
 		</div>
@@ -106,71 +106,44 @@
 		<!-- Name -->
 		<div class="info">
 			<h2 class="names">
-				<a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm" class="remove-a-style">Dijkstra algorithm</a>
+				<a href="https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm" class="remove-a-style">Extended Euclidean Algorithm</a>
 			</h2>
-			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(n<sub>2</sub>+m)</span></p>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(log(n))</span></p>
 
 			<!-- Info -->
 			<p class="section-name">Algorithm info</p>
-			<div class="description">Here is an algorithm described by the Dutch computer scientist Edsger W. Dijkstra in 1959.
+			<div class="description">
+				<p>In arithmetic and computer programming, the extended Euclidean algorithm is an extension to the Euclidean algorithm, and computes, in addition to the greatest common divisor of integers a and b, also the coefficients of Bézout's identity, which are integers x and y such that</p>
 
-Let's create an array d[] where for each vertex v we store the current length of the shortest path from s to v in d[v]. Initially d[s]=0, and for all other vertices this length equals infinity. In the implementation a sufficiently large number (which is guaranteed to be greater than any possible path length) is chosen as infinity.
+				<p>ax+by=gcd(a,b).</p>
+				<p>This is a certifying algorithm, because the gcd is the only number that can simultaneously satisfy this equation and divide the inputs. It allows one to compute also, with almost no extra cost, the quotients of a and b by their greatest common divisor.</p>
 
-				<p>d[v]=∞, v≠s</p>
-In addition, we maintain a Boolean array u[] which stores for each vertex v whether it's marked. Initially all vertices are unmarked:
+				<p>Extended Euclidean algorithm also refers to a very similar algorithm for computing the polynomial greatest common divisor and the coefficients of Bézout's identity of two univariate polynomials.</p>
 
-				<p>u[v]=false</p>
-The Dijkstra's algorithm runs for n iterations. At each iteration a vertex v is chosen as unmarked vertex which has the least value d[v]:
-
-				<p>Evidently, in the first iteration the starting vertex s will be selected.</p>
-
-The selected vertex v is marked. Next, from vertex v relaxations are performed: all edges of the form (v,to) are considered, and for each vertex to the algorithm tries to improve the value d[to]. If the length of the current edge equals len, the code for relaxation is:
-
-				<p>d[to]=min(d[to],d[v]+len)</p>
-After all such edges are considered, the current iteration ends. Finally, after n iterations, all vertices will be marked, and the algorithm terminates. We claim that the found values d[v] are the lengths of shortest paths from s to all vertices v.
-
-				<p>Note that if some vertices are unreachable from the starting vertex s, the values d[v] for them will remain infinite. Obviously, the last few iterations of the algorithm will choose those vertices, but no useful work will be done for them. Therefore, the algorithm can be stopped as soon as the selected vertex has infinite distance to it.</p>
+				<p>The extended Euclidean algorithm is particularly useful when a and b are coprime, since x is the modular multiplicative inverse of a modulo b, and y is the modular multiplicative inverse of b modulo a. Similarly, the polynomial extended Euclidean algorithm allows one to compute the multiplicative inverse in algebraic field extensions and, in particular in finite fields of non prime order. It follows that both extended Euclidean algorithms are widely used in cryptography. In particular, the computation of the modular multiplicative inverse is an essential step in RSA public-key encryption method.</p>
 			</div>
-
-
-			<!-- Code -->
+<!-- Code -->
 			<p class="section-name">Algorithm realisation</p>
 <pre><code>
-const int INF = 1000000000;
-vector< vector< pair< int, int > > > adj;
-
-void dijkstra(int s, vector< int > & d, vector< int > & p) {
-    int n = adj.size();
-    d.assign(n, <input type="text" id="q1" class="code-style"/>);
-    p.assign(n,<input type="text" id="q2" class="code-style"/>);
-    vector< bool > u(n, <input type="text" id="q3" class="code-style"/>);
-
-    d[s] = <input type="text" id="q4" class="code-style"/>;
-    for (int i = 0; i < n; i++) {
-        int v = -1;
-        for (int j = 0; j < n; j++) {
-            if (!u[j] && (v == <input type="text" id="q5" class="code-style"/> || <input type="text" id="q6" class="code-style"/> < d[v]))
-                v = j;
-        }
-
-        if (d[v] == INF)
-            break;
-
-        u[v] = true;
-        for (auto edge : adj[v]) {
-            int to = edge.first;
-            int len = edge.second;
-
-            if (d[v] + <input type="text" id="q7" class="code-style"/> < d[to] ) {
-                d[to] = d[v] + len;
-                p[to] = v;
-            }
-        }
+int gcd (int a, int b, int & x, int & y) {
+    if (a == 0) {
+        x = 0;
+        y = 1;
+        return <input type="text" id="q1" class="code-style"/>;
     }
+    int x1, y1;
+    int d = gcd (b % a, a, x1, y1);
+    x = <input type="text" id="q2" class="code-style"/> - (b / a) * x1;
+    y = x1;
+    return <input type="text" id="q3" class="code-style"/>;
 }
 </code></pre>
 
-<!-- In work -->
+<p class="section-name">Algorithm in work</p>
+<pre><code>
+printf("%d",  gcd (4,2,7,3)); <input type="text" id="q4" class="code-style"/>
+printf("%d",  gcd (1,1,1,1)); <input type="text" id="q5" class="code-style"/>
+	</code></pre>
 
 
 
@@ -194,7 +167,7 @@ void dijkstra(int s, vector< int > & d, vector< int > & p) {
 	<script src="js/MD5.js"></script>
 	<script src="js/requests.js"></script>
 	<script src="js/algo_default.js"></script>
-	<script src="js/algo3.js"></script>
+	<script src="js/algo9.js"></script>
 </body>
 
 </html>
