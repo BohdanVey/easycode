@@ -64,10 +64,6 @@ $(document).ready(function(e) {
 		$("#algo10").addClass("done");
 	else
 		$("#algo10_load").hide();
-	if(user.item_eleven)
-		$("#algo11").addClass("done");
-	else
-		$("#algo11_load").hide();
 
 
 	// logot button
