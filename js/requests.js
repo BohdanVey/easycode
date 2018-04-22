@@ -104,10 +104,10 @@ function post(email, login, psw) {
 }
 
 
-function put(field, id){
+function put(field, id, val){
 	let status = null;
 	var jsondata = {};
-	jsondata[field] = true;
+	jsondata[field] = val;
 	var settings = {
 	"async": true,
 	"crossDomain": true,

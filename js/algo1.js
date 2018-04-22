@@ -21,10 +21,12 @@ function checkAnswers() {
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
     let item = "item_one";
-    put(item, user._id);
-    if(!user[item])
-		user["money"] += parseInt("200");
-	user[item] = true;
+    if(!user[item]){
+		user["money"] += 200;
+		user[item] = true;
+		put(item, user._id, true);
+		put("money", user._id, user["money"]);
+	}
     
     $("#algo1").addClass("done");
     $("#algo1_load").show();
