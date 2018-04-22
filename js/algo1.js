@@ -22,8 +22,10 @@ function checkAnswers() {
     
     let item = "item_one";
     put(item, user._id);
-    user[item] = true;
-    user["money"] += parseInt(200);
+    if(!user[item])
+		user["money"] += parseInt("200");
+	user[item] = true;
+    
     $("#algo1").addClass("done");
     $("#algo1_load").show();
 }
