@@ -23,6 +23,8 @@ function checkAnswers() {
     let item = "item_one";
     put(item, user._id);
     user[item] = true;
+	put(money, user._id);
+    user[money] += 200;
     $("#algo1").addClass("done");
     $("#algo1_load").show();
 }
