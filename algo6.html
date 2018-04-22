@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>EasyCode</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/ico.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/algo.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand" href="#" id="expand"><span class="glyphicon glyphicon-menu-hamburger"></span> </div>
+				<a class="navbar-brand" href="index.html">EasyCode</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="algo">
+					<a href="#"><span class="glyphicon glyphicon-console"></span> Algorithms</a>
+				</li>
+				<li id="logout">
+						<a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Content -->
+	<div class="content">
+
+		<!-- Left bar -->
+		<div class="left-bar">
+			<ul class="list-group">
+				<div class="list-group-item" id="algo1">
+					<a href="algo1.html" class="remove-a-style color">Binary exponentiation</a> 
+					<a href="codes/algo1.cpp" download="binary_exponential.cpp" class="download remove-a-style"  id="algo1_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item" id="algo2">
+					<a href="algo2.html" class="remove-a-style color">Dijkstra algorithm</a> 
+					<a href="codes/algo2.cpp" download="dijkstra.cpp" class="download remove-a-style" id="algo2_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo3">
+					<a href="algo3.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo3.cpp" download="gcd.cpp" class="download remove-a-style" id="algo3_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo4">
+					<a href="algo4.html" class="remove-a-style color">Fenwick Tree</a> 
+					<a href="codes/algo4.cpp" download="fenwicktree.cpp" class="download remove-a-style" id="algo4_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo5">
+					<a href="#" class="remove-a-style color">Sieve of Eratosthenes</a> 
+					<a href="codes/algo5.cpp" download="SieveofEratosthenes.cpp" class="download remove-a-style" id="algo5_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo6">
+					<a href="algo6.html" class="remove-a-style color">Z-function and its calculation</a> 
+					<a href="codes/algo6.cpp" download="Zfunction.cpp" class="download remove-a-style" id="algo6_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo7">
+					<a href="algo7.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo7.cpp" download="gcd.cpp" class="download remove-a-style" id="algo7_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo8">
+					<a href="algo8.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo8.cpp" download="gcd.cpp" class="download remove-a-style" id="algo8_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo9">
+					<a href="algo9.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo9.cpp" download="gcd.cpp" class="download remove-a-style" id="algo9_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo10">
+					<a href="algo10.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo10.cpp" download="gcd.cpp" class="download remove-a-style" id="algo10_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+				<div class="list-group-item"  id="algo11">
+					<a href="algo11.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="codes/algo11.cpp" download="SieveofEratosthenes.cpp" class="download remove-a-style" id="algo11_load">
+						<span class="glyphicon glyphicon-download"></span>
+					</a>
+				</div>
+			</ul>
+
+		</div>
+
+		<!-- Name -->
+		<div class="info">
+			<h2 class="names">
+				<a href="https://en.wikipedia.org/wiki/Z_function" class="remove-a-style">Z-function and its calculation</a>
+			</h2>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(n)</span></p>
+
+			<!-- Info -->
+			<p class="section-name">Algorithm info</p>
+			<div class="description">
+				<p>Suppose we are given a string s of length n. The Z-function for this string is an array of length n where the i-th element is equal to the greatest number of characters starting from the position i that coincide with the first characters of s.</p>
+
+				<p>In other words, z[i] is the length of the longest common prefix between s and the suffix of s starting at i.</p>
+
+				<p>Note. In this article, to avoid ambiguity, we assume 0-based indexes; that is: the first character of s has index 0 and the last one has index n−1.</p>
+
+				<p>The first element of Z-function, z[0], is generally not well defined. In this article we will assume it is zero (although it doesn't change anything in the algorithm implementation).</p>
+
+This article presents an algorithm for calculating the Z-function in O(n) time, as well as various of its applications.
+			</div>
+<!-- Code -->
+			<p class="section-name">Algorithm realisation</p>
+<pre><code>
+vector< int > z_function_trivial(string s) {
+    int n = (int) s.length();
+    vector< int > z(n);
+    for (int i = 1; i < n; ++i)
+        while (i + z[i] <input type="text" id="q1" class="code-style"/> n && s[z[i]] == s[i + <input type="text" id="q2" class="code-style"/>])
+            ++<input type="text" id="q3" class="code-style"/>;
+    return <input type="text" id="q4" class="code-style"/>;
+}
+</code></pre>
+<p class="section-name">Algorithm in work</p>
+<pre><code>
+vector<int>a=zfunctiontrivial("aaa");
+for(int i=0;i<a.size();i++){
+ cout<<a[i]<<endl;
+}
+<input type="text" id="q5" class="code-style"/>
+	</code></pre>
+
+
+
+		<!-- Check -->
+		<button onclick="checkAnswers()" type="button" class="check-btn dark-btn">Check</button>
+		
+		<div class="alert alert-danger" role="alert" id="wrong-alert">
+				Wrong answers. Try again!
+		</div>
+
+		<div class="alert alert-success" role="alert" id="correct-alert">
+				Correct answers. Now algorithm avaliable for you!
+		</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://easycode-bee9.restdb.io/rest/_jsapi.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/MD5.js"></script>
+	<script src="js/requests.js"></script>
+	<script src="js/algo_default.js"></script>
+	<script src="js/algo6.js"></script>
+</body>
+
+</html>
