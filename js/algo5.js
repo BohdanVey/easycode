@@ -21,9 +21,9 @@ function checkAnswers() {
     $("#correct-alert").show();
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
-    let item = "item_four";
+    let item = "item_five";
     put(item, user._id);
     user[item] = true;
-    $("#algo4").addClass("done");
-    $("#algo4_load").show();
+    $("#algo5").addClass("done");
+    $("#algo5_load").show();
 }
