@@ -37,7 +37,7 @@
 
 		<!-- Left bar -->
 		<div class="left-bar">
-			<ul class="list-group">
+		<ul class="list-group">
 				<div class="list-group-item" id="algo1">
 					<a href="algo1.html" class="remove-a-style color">Binary exponentiation</a> 
 					<a href="codes/algo1.cpp" download="binary_exponential.cpp" class="download remove-a-style"  id="algo1_load">
@@ -51,7 +51,7 @@
 					</a>
 				</div>
 				<div class="list-group-item"  id="algo3">
-					<a href="#" class="remove-a-style color">Greatest common divider</a> 
+					<a href="algo3.html" class="remove-a-style color">Greatest common divider</a> 
 					<a href="codes/algo3.cpp" download="gcd.cpp" class="download remove-a-style" id="algo3_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
@@ -93,56 +93,53 @@
 					</a>
 				</div>
 				<div class="list-group-item"  id="algo10">
-					<a href="algo10.html" class="remove-a-style color">Finding Power of Factorial Divisor</a> 
+					<a href="#" class="remove-a-style color">Finding Power of Factorial Divisor</a> 
 					<a href="codes/algo10.cpp" download="FindingPowerofFactorialDivisor.cpp" class="download remove-a-style" id="algo10_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
 				</div>
 
 			</ul>
-
 		</div>
 
 		<!-- Name -->
 		<div class="info">
 			<h2 class="names">
-				<a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" class="remove-a-style">Greatest common divider</a>
+				<a href="https://e-maxx-eng.appspot.com/algebra/factorial-divisors.htmlm" class="remove-a-style">Finding Power of Factorial Divisor</a>
 			</h2>
-			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(log(min(a,b)))</span></p>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(k)</span></p>
 
 			<!-- Info -->
 			<p class="section-name">Algorithm info</p>
 			<div class="description">
-				<p>In mathematics, the greatest common divisor (gcd) of two or more integers, which are not all zero, is the largest positive integer that divides each of the integers. For example, the gcd of 8 and 12 is 4.</p>
+				<p>Let's first consider the case of prime k. The explicit expression for factorial</p>
+				<p>n!=1⋅2⋅3…(n−1)⋅n</p>
+				<p>Note that every k-th element of the product is divisible by k, i.e. adds +1 to the answer; the number of such elements is ⌊n/k⌋.</p>
+<p>Next, every k2-th element is divisible by k2, i.e. adds another +1 to the answer (the first power of k has already been counted in the previous paragraph). The number of such elements is ⌊n/k<sup>2</sup>⌋.
 
-				<p>The greatest common divisor is also known as the greatest common factor (gcf), highest common factor (hcf), greatest common measure (gcm), or highest common divisor.</p>
-
-				<p>This notion can be extended to polynomials (see Polynomial greatest common divisor) and other commutative rings (see below).</p>
-				The algorithm is extremely simple:
-
-				<p>gcd(a,b)=a,if b=0</p>
-					<p>gcd(a,b)=(b,a%b) otherwise</p>
-				
+				<p>And so on, for every i each k<sub>i</sub>-th element adds another +1 to the answer, and there are ⌊n/k<sup>i</sup>⌋ such elements.</p>
+				<p>The final answer is</p>
+<p>⌊n/k⌋+⌊n/k<sup>2</sup>⌋+…+⌊n/k<sup>i</sup>⌋+…</p>
+The sum is of course finite, since only approximately the first logkn elements are not zeros. Thus, the runtime of this algorithm is O(logkn).
 			</div>
-
-
-			<!-- Code -->
+<!-- Code -->
 			<p class="section-name">Algorithm realisation</p>
 <pre><code>
-int gcd (int a, int b) {
-    if (b == 0)
-        return <input type="text" id="q1" class="code-style"/>;
-    else
-        return gcd (<input type="text" id="q2" class="code-style"/>, a % <input type="text" id="q3" class="code-style"/>);
+
+int fact_pow (int n, int k) {
+    int res = 0;
+    while (n) {
+        n /= <input type="text" id="q1" class="code-style"/>;
+        res += <input type="text" id="q2" class="code-style"/>;
+    }
+    return <input type="text" id="q3" class="code-style"/>;
 }
 </code></pre>
 
-<!-- In work -->
 <p class="section-name">Algorithm in work</p>
-<pre><code>printf("result is %d\n", gcd(1024, 9));
-//Output: result is <input type="text" id="q4" class="code-style"/>
-printf("result is %d\n", binpow(200, 120));
-//Output: result is <input type="text" id="q5" class="code-style"/>
+<pre><code>
+printf("%d", fact_pow(3,2)); <input type="text" id="q4" class="code-style"/>
+printf("%d", fact_pow(4,2)); <input type="text" id="q5" class="code-style"/>
 	</code></pre>
 
 
@@ -167,7 +164,7 @@ printf("result is %d\n", binpow(200, 120));
 	<script src="js/MD5.js"></script>
 	<script src="js/requests.js"></script>
 	<script src="js/algo_default.js"></script>
-	<script src="js/algo3.js"></script>
+	<script src="js/algo10.js"></script>
 </body>
 
 </html>
