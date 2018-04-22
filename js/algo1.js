@@ -24,7 +24,7 @@ function checkAnswers() {
     put(item, user._id);
     user[item] = true;
 	put("money", user._id);
-    user["money"] += int(200);
+    user["money"] += parseInt(200);
     $("#algo1").addClass("done");
     $("#algo1_load").show();
 }
