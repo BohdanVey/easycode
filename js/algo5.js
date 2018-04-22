@@ -5,8 +5,7 @@ function checkAnswers() {
         document.getElementById("q2"),
         document.getElementById("q3"),
         document.getElementById("q4"),
-        document.getElementById("q5")
-	];
+        document.getElementById("q5")];
     for(let i = 0; i < forms.length; i++){
         if(forms[i].value != answers[i]){
             // Wrong
