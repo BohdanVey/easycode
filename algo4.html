@@ -64,7 +64,7 @@
 					</a>
 				</div>
 				<div class="list-group-item"  id="algo5">
-					<a href="algo5.html" class="remove-a-style color">Greatest common divider</a> 
+					<a href="algo5.html" class="remove-a-style color">Sieve of Eratosthenes</a> 
 					<a href="codes/algo5.cpp" download="gcd.cpp" class="download remove-a-style" id="algo5_load">
 						<span class="glyphicon glyphicon-download"></span>
 					</a>
@@ -114,22 +114,22 @@
 			<h2 class="names">
 				<a href="https://en.wikipedia.org/wiki/Fenwick_tree" class="remove-a-style">Fenwick Tree</a>
 			</h2>
-			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(m*log(n))</span></p>
+			<p class="complexity">The complexity of this algorithm is <span class="complexity-number">O(mlog(n))</span></p>
 
 			<!-- Info -->
 			<p class="section-name">Algorithm info</p>
 			<div class="description">
-				<p>Although Fenwick trees are trees in concept, in practice they are implemented as an implicit data structure using a flat array analogous to implementations of a binary heap. Given an index in the array representing a vertex, the index of a vertex's parent or child is calculated through bitwise operations on the binary representation of its index. Each element of the array contains the pre-calculated sum of a range of values, and by combining that sum with additional ranges encountered during an upward traversal to the root, the prefix sum is calculated. When a table value is modified, all range sums which contain the modified value are in turn modified during a similar traversal of the tree. The range sums are defined in such a way that both queries and modifications to the table are executed in asymptotically equivalent time ( {\displaystyle O(\log n)} O(\log n) in the worst case).</p>
+				<p>Although Fenwick trees are trees in concept, in practice they are implemented as an implicit data structure using a flat array analogous to implementations of a binary heap. Given an index in the array representing a vertex, the index of a vertex's parent or child is calculated through bitwise operations on the binary representation of its index. Each element of the array contains the pre-calculated sum of a range of values, and by combining that sum with additional ranges encountered during an upward traversal to the root, the prefix sum is calculated. When a table value is modified, all range sums which contain the modified value are in turn modified during a similar traversal of the tree. The range sums are defined in such a way that both queries and modifications to the table are executed in asymptotically equivalent time (  O(log n) in the worst case).</p>
 
-				<p>The initial process of building the Fenwick tree over a table of values runs in {\displaystyle O(n)} O(n) time. Other efficient operations include locating the index of a value if all values are positive, or all indices with a given value if all values are non-negative. Also supported is the scaling of all values by a constant factor in {\displaystyle O(n)} O(n) time.</p>
+				<p>The initial process of building the Fenwick tree over a table of values runs in O(n) time. Other efficient operations include locating the index of a value if all values are positive, or all indices with a given value if all values are non-negative. Also supported is the scaling of all values by a constant factor in O(n) time.</p>
 
 				<p>A Fenwick tree is most easily understood by considering a one-based array. Each element whose index i is a power of 2 contains the sum of the first i elements. Elements whose indices are the sum of two (distinct) powers of 2 contain the sum of the elements since the preceding power of 2. In general, each element contains the sum of the values since its parent in the tree, and that parent is found by clearing the least-significant bit in the index.</p>
 
 				<p>To find the sum up to any given index, consider the binary expansion of the index, and add elements which correspond to each 1 bit in the binary form.</p>
 
-				<p>For example, say one wishes to find the sum of the first eleven values. Eleven is 10112 in binary. This contains three 1 bits, so three elements must be added: 1000, 1010, and 1011. These contain the sums of values 1–8, 9–10, and 11, respectively.</p>
+				<p>For example, say one wishes to find the sum of the first eleven values. Eleven is 1011 in binary. This contains three 1 bits, so three elements must be added: 1000, 1010, and 1011. These contain the sums of values 1–8, 9–10, and 11, respectively.</p>
 
-				<p>To modify the eleventh value, the elements which must be modified are 10112, 11002, 100002, and all higher powers of 2 up to the size of the array. These contain the sums of values 11, 9–12, and 1–16, respectively. The maximum number of elements which may need to be updated is limited by the number of bits in the size of the array.</p>
+				<p>To modify the eleventh value, the elements which must be modified are 1011, 1100, 10000, and all higher powers of 2 up to the size of the array. These contain the sums of values 11, 9–12, and 1–16, respectively. The maximum number of elements which may need to be updated is limited by the number of bits in the size of the array.</p>
 			</div>
 <!-- Code -->
 			<p class="section-name">Algorithm realisation</p>

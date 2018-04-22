@@ -1,5 +1,5 @@
 function checkAnswers() {
-    let answers = ["a", "b", "b", "1", "40"];
+    let answers = ["a", "b", "b", "1", "40	"];
     let forms = [
         document.getElementById("q1"),
         document.getElementById("q2"),
