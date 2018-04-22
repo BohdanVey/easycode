@@ -43,7 +43,7 @@ $(document).ready(function(e) {
 	if(user.item_five)
 		$("#algo5").addClass("done");
 	else
-		$("#algo_load").hide();
+		$("#algo5_load").hide();
 	if(user.item_six)
 		$("#algo6").addClass("done");
 	else
