@@ -1,5 +1,5 @@
 function checkAnswers() {
-    let answers = ["a", "b", "b", "1", "40"];
+    let answers = ["<", "z[i]", "z[i]", "z", "021"];
     let forms = [
         document.getElementById("q1"),
         document.getElementById("q2"),
@@ -20,9 +20,9 @@ function checkAnswers() {
     $("#correct-alert").show();
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
-    let item = "item_three";
+    let item = "item_six";
     put(item, user._id);
     user[item] = true;
-    $("#algo3").addClass("done");
-    $("#algo3_load").show();
+    $("#algo6").addClass("done");
+    $("#algo6_load").show();
 }
