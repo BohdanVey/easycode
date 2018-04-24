@@ -1,7 +1,7 @@
 let user = null;
 $(document).ready(function(e) {
 	$(".left-bar").toggle();
-	$("#correct-alert").hide();
+	$("#correct-alert1").hide();
     $("#wrong-alert1").hide();
 	  $("#wrong-alert2").hide();
     /* auth */
