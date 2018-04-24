@@ -23,8 +23,12 @@ function checkAnswers() {
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
     let item = "item_four";
-    put(item, user._id);
-    user[item] = true;
+        if(!user[item]){
+		user["money"] += 550;
+		user[item] = true;
+		put(item, user._id, true);
+		put("money", user._id, user["money"]);
+	}
     $("#algo4").addClass("done");
     $("#algo4_load").show();
 }

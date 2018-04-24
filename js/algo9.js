@@ -21,8 +21,12 @@ function checkAnswers() {
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
     let item = "item_nine";
-    put(item, user._id);
-    user[item] = true;
+    if(!user[item]){
+		user["money"] += 200;
+		user[item] = true;
+		put(item, user._id, true);
+		put("money", user._id, user["money"]);
+	}
     $("#algo9").addClass("done");
     $("#algo9_load").show();
 }

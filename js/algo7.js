@@ -21,8 +21,12 @@ function checkAnswers() {
     $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
     
     let item = "item_seven";
-    put(item, user._id);
-    user[item] = true;
+     if(!user[item]){
+		user["money"] += 100;
+		user[item] = true;
+		put(item, user._id, true);
+		put("money", user._id, user["money"]);
+	}
     $("#algo7").addClass("done");
     $("#algo7_load").show();
 }
