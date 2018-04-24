@@ -1,7 +1,7 @@
 let user = null;
 $(document).ready(function(e) {
 	$(".left-bar").toggle();
-	$("#correct-alert1").hide();
+	$("#correct-alert").hide();
     $("#wrong-alert1").hide();
 	  $("#wrong-alert2").hide();
     /* auth */
@@ -214,7 +214,7 @@ function buy7() {
     }
 function buy8() {
        let item="item_eight";
-            // Wrong
+            
 	if(user[item]==true){
             $("#correct-alert1").hide();
             $("#wrong-alert1").show();
@@ -243,8 +243,8 @@ function buy9() {
             // Wrong
 	if(user[item]==true){
             $("#correct-alert1").hide();
-            $("#wrong-alert2").show();
-	  		$("#wrong-alert1").hide();
+            $("#wrong-alert1").show();
+	  		$("#wrong-alert2").hide();
             $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
             return;
 	}
