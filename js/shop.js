@@ -243,8 +243,8 @@ function buy9() {
             // Wrong
 	if(user[item]==true){
             $("#correct-alert1").hide();
-            $("#wrong-alert1").show();
-	  		$("#wrong-alert2").hide();
+            $("#wrong-alert2").show();
+	  		$("#wrong-alert1").hide();
             $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
             return;
 	}
