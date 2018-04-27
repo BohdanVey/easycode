@@ -1,3 +1,7 @@
+$(document).ready(function(e) {
+    $("#correct-alert").text("You earn 200 algoritmiks. Open your chest to spend it!");
+});
+
 function checkAnswers() {
     let answers = ["2", "1", "2", "81", "256"];
     let forms = [

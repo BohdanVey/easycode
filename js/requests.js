@@ -37,6 +37,26 @@ function getByEmail(email){
 	return result;
 }
 
+function getByLogin(login){
+	let result = [];
+	let settings = {
+		"async": false,
+		"crossDomain": true,
+		"url": 'https://easycode-bee9.restdb.io/rest/easycode?q={"login": "' + login + '"}',
+		"method": "GET",
+		"headers": {
+			"content-type": "application/json",
+			"x-apikey": "5ab2ab4df0a7555103cea668",
+			"cache-control": "no-cache"
+		}
+	}
+
+	$.ajax(settings).done(function (response) {
+		result = response;
+	});
+	return result;
+}
+
 function checkUser(login, md5_password){
 	let result = [];
 	let settings = {

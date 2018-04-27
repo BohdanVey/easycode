@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>EasyCode</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/ico.png">
+
+	<!-- Website Font style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/chest.css">
+	
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">EasyCode</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+					<li id="money-list">
+								<a href="#"> <img src="img/money.png" class="money-ico"> <span id="money">0</span>  </a>
+							</li>
+					<li id="chest">
+						<a href="#"> <img src="img/chest.png" class="chest-ico"> Chest</a>
+					</li>
+					<li id="algo">
+						<a href="algo1.html"><span class="glyphicon glyphicon-console"></span> Algorithms</a>
+					</li>
+					<li id="logout">
+							<a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+					</li>
+				</ul>
+		</div>
+	</nav>
+
+<div class="container">  
+	<div id="conf">
+		<div id="conf-text"></div>
+		<div id="conf-content">
+			<div id="conf-ok">Yes</div>
+			<div id="conf-cancel">No</div>
+		</div>
+	</div>
+	<div id="back"></div>
+		<!-- Content -->
+		<div class="my-row">
+				<div class="my-col" id="item_one" onclick="confirm('item_one', 'Binary exponention', 300)">Binary exponention<br><b>300</b></div>
+				<div class="my-col" id="item_two" onclick="confirm('item_two', 'Dijkstra algorithm', 750)">Dijkstra algorithm<br><b>750</b></div>
+				<div class="my-col" id="item_three" onclick="confirm('item_three', 'Greatest common divider', 250)">Greatest common divider<br><b>250</b></div>
+				<div class="my-col" id="item_four" onclick="confirm('item_four', 'Fenwick Tree', 800)">Fenwick Tree<br><b>800</b></div>
+			</div>
+			<div class="my-row">
+				<div class="my-col" id="item_five" onclick="confirm('item_five', 'Sieve of Eratosthenes', 450)">Sieve of Eratosthenes<br><b>450</b></div>
+				<div class="my-col" id="item_six" onclick="confirm('item_six', 'Z-function and its calculation', 400)">Z-function and its calculation<br><b>400</b></div>
+				<div class="my-col" id="item_seven" onclick="confirm('item_seven', 'Fibonacci number', 200)">Fibonacci number<br><b>200</b></div>
+				<div class="my-col" id="item_eight" onclick="confirm('item_eight', 'Prefix function', 400)">Prefix function<br><b>400</b></div>
+			</div>
+			<div class="my-row">
+				<div class="my-col" id="item_nine" onclick="confirm('item_nine', 'Extended Euclidean Algorithm', 300)">Extended Euclidean Algorithm<br><b>300</b></div>
+				<div class="my-col" id="item_ten" onclick="confirm('item_ten', 'Finding Power of Factorial Divisor', 250)">Finding Power of Factorial Divisor<br><b>250</b></div>
+				<div class="my-col not-work"><b>Not done yet</b></div>
+				<div class="my-col not-work"><b>Not done yet</b></div>
+			</div>
+			<div class="my-row">
+				<div class="my-col not-work"><b>Not done yet</b></div>
+				<div class="my-col not-work"><b>Not done yet</b></div>
+				<div class="my-col not-work"><b>Not done yet</b></div>
+				<div class="my-col not-work"><b>Not done yet</b></div>
+			</div>
+
+			<div class="alert alert-danger my-alert" role="alert" id="wrong-alert"></div>
+			<div class="alert alert-success my-alert" role="alert" id="correct-alert"></div>
+		</div>
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+	<script src="js/MD5.js"></script>
+	<script src="js/requests.js"></script>
+	<script src="js/chest.js"></script>
+
+</body>
+
+</html>

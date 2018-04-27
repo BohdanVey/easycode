@@ -52,8 +52,9 @@ body{
     border-radius: 0px !important;
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    min-height: 50px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 .download{
     font-size: 20px;
@@ -74,7 +75,13 @@ body{
     min-width: 710px;
 }
 
+.chest-ico{
+    width: 20px;
+}
 
+.money-ico{
+    width:25px;
+}
 
 
 

@@ -43,15 +43,42 @@ body{
 /* Banner */
 .banner{
     margin-top: 160px;
-    height: 240px;
+    min-height: 240px;
     width: 100%;
     background-color: rgba(245,245,245, 0.8);
     cursor: pointer;
     padding-top: 60px;
+    padding-bottom: 60px;
     padding-left: 140px;
     font-size: 38px;
     font-weight: bold;
 }
 .banner:hover{
     background-color: rgba(245,245,245, 0.6);
+}
+#login{
+    display: none;
+}
+#register{
+    display: none;
+}
+#algo{
+    display: none;
+}
+#logout{
+    display: none;
+}
+#money-list{
+    display: none;
+}
+#chest{
+    display: none;
+}
+
+.chest-ico{
+    width: 20px;
+}
+
+.money-ico{
+    width:25px;
 }

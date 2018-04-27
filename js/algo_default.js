@@ -9,15 +9,20 @@ $(document).ready(function(e) {
 	let password = localStorage.getItem("password_ec");
 	let result = checkUser(login, password);
 	if( login === null || password === null || result.length == 0) {
-		window.location.href = 'login.html';
+		//window.location.href = 'login.html'; // TODO: remove comment
 	}
 	user = result[0]; // set user
-	//TODO: remove
+
+	// TODO: remove
 	// user = {
+	// 	money: 300,
 	// 	item_one: true,
 	// 	item_two: true,
 	// 	item_three: true,
 	// }
+
+	
+	$("#money").text(user.money);
 
 	// get avaliable algorithms
 	if(user.item_one)
