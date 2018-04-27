@@ -91,6 +91,7 @@ function buy(item, cost){
         put(item, user._id, true);
         put("money", user._id, user["money"]);
         $("#money").text(user.money);
+	$("#" + item).addClass("done");
         $("#correct-alert").text("Success!");
         $("#correct-alert").show();
         $("#wrong-alert").hide();
